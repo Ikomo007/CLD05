@@ -1,4 +1,4 @@
-data "terraform_remote_state" "S3.tf" {
+data "backend" "S3.tf" {
   backend = "local"
 
   config = {
@@ -6,7 +6,7 @@ data "terraform_remote_state" "S3.tf" {
   }
 }
 
-data "terraform_remote_state" "ec2-instance.tf" {
+data "ec2" "ec2-instance.tf" {
   backend = "local"
 
   config = {
@@ -14,7 +14,7 @@ data "terraform_remote_state" "ec2-instance.tf" {
   }
 }
 
-data "terraform_remote_state" "vpc.tf" {
+data "vpc" "vpc.tf" {
   backend = "local"
 
   config = {
